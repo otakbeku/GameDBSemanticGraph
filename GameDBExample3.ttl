@@ -1,0 +1,300 @@
+@prefix : <http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3> .
+
+<http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#hasDifficulty
+:hasDifficulty rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Game ;
+               rdfs:range :DifficultyValuePartition .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#hasGenre
+:hasGenre rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#hasPlatform
+:hasPlatform rdf:type owl:ObjectProperty ;
+             rdfs:domain :Game ;
+             rdfs:range :Platform .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Chess
+:Chess rdf:type owl:Class ;
+       rdfs:subClassOf :NamedGame ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasDifficulty ;
+                         owl:someValuesFrom :Normal
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGenre ;
+                         owl:someValuesFrom :MultiPlayer
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGenre ;
+                         owl:someValuesFrom :SinglePlayer
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPlatform ;
+                         owl:someValuesFrom :LinuxPlatform
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPlatform ;
+                         owl:someValuesFrom :MacOSXPlatform
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPlatform ;
+                         owl:someValuesFrom :WindowsPlatform
+                       ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#DifficultyValuePartition
+:DifficultyValuePartition rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Easy
+                                                              :Hard
+                                                              :Normal
+                                                            )
+                                              ] ;
+                          rdfs:subClassOf :ValuePartition .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Easy
+:Easy rdf:type owl:Class ;
+      rdfs:subClassOf :DifficultyValuePartition .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#EasyGame
+:EasyGame rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Game
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasGenre ;
+                                                       owl:someValuesFrom :Easy
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Game
+:Game rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Genre
+:Genre rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Hard
+:Hard rdf:type owl:Class ;
+      rdfs:subClassOf :DifficultyValuePartition .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#HardGame
+:HardGame rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Game
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasGenre ;
+                                                       owl:someValuesFrom :Hard
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#LeagueOfLegends
+:LeagueOfLegends rdf:type owl:Class ;
+                 rdfs:subClassOf :NamedGame .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#LinuxGame
+:LinuxGame rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Game
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasPlatform ;
+                                                        owl:someValuesFrom :LinuxPlatform
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#LinuxPlatform
+:LinuxPlatform rdf:type owl:Class ;
+               rdfs:subClassOf :Platform .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#MacOSXGame
+:MacOSXGame rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Game
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasPlatform ;
+                                                         owl:someValuesFrom :MacOSXPlatform
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#MacOSXPlatform
+:MacOSXPlatform rdf:type owl:Class ;
+                rdfs:subClassOf :Platform .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#MultiPlayer
+:MultiPlayer rdf:type owl:Class ;
+             rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#MultiPlayerGame
+:MultiPlayerGame rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Game
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasGenre ;
+                                                              owl:someValuesFrom :MultiPlayer
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#NamedGame
+:NamedGame rdf:type owl:Class ;
+           rdfs:subClassOf :Game .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Normal
+:Normal rdf:type owl:Class ;
+        rdfs:subClassOf :DifficultyValuePartition .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#NormalGame
+:NormalGame rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Game
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasGenre ;
+                                                         owl:someValuesFrom :Normal
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Online
+:Online rdf:type owl:Class ;
+        rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Platform
+:Platform rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Puzzle
+:Puzzle rdf:type owl:Class ;
+        rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#RolePlayGame
+:RolePlayGame rdf:type owl:Class ;
+              rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#SinglePlayer
+:SinglePlayer rdf:type owl:Class ;
+              rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#SinglePlayerGame
+:SinglePlayerGame rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Game
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasGenre ;
+                                                               owl:someValuesFrom :SinglePlayer
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#Sudoku
+:Sudoku rdf:type owl:Class ;
+        rdfs:subClassOf :NamedGame .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#ValuePartition
+:ValuePartition rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#WindowsPlatform
+:WindowsPlatform rdf:type owl:Class ;
+                 rdfs:subClassOf :Platform .
+
+
+###  http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#WorldOfWarcraft
+:WorldOfWarcraft rdf:type owl:Class ;
+                 rdfs:subClassOf :NamedGame .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Chess
+                :LeagueOfLegends
+                :Sudoku
+                :WorldOfWarcraft
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Easy
+                :Hard
+                :Normal
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Game
+                :Genre
+                :Platform
+                :ValuePartition
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :LinuxPlatform
+                :MacOSXPlatform
+                :WindowsPlatform
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :MultiPlayer
+                :Online
+                :Puzzle
+                :RolePlayGame
+                :SinglePlayer
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

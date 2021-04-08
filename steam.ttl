@@ -1,0 +1,192 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+2 "achievements" 0 ;
+    "appid" 30 ;
+    "average_playtime" 187 ;
+    "categories" "Multi-player;Valve Anti-Cheat enabled" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 34 ;
+    "name" "Day of Defeat" ;
+    "negative_ratings" 398 ;
+    "owners" "5000000-10000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 3416 ;
+    "price" 3.99e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "2003-05-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "FPS;World War II;Multiplayer" .
+
+3 "achievements" 0 ;
+    "appid" 40 ;
+    "average_playtime" 258 ;
+    "categories" "Multi-player;Online Multi-Player;Local Multi-Player;Valve Anti-Cheat enabled" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 184 ;
+    "name" "Deathmatch Classic" ;
+    "negative_ratings" 267 ;
+    "owners" "5000000-10000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 1273 ;
+    "price" 3.99e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "2001-06-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "Action;FPS;Multiplayer" .
+
+4 "achievements" 0 ;
+    "appid" 50 ;
+    "average_playtime" 624 ;
+    "categories" "Single-player;Multi-player;Valve Anti-Cheat enabled" ;
+    "developer" "Gearbox Software" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 415 ;
+    "name" "Half-Life: Opposing Force" ;
+    "negative_ratings" 288 ;
+    "owners" "5000000-10000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 5250 ;
+    "price" 3.99e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "1999-11-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "FPS;Action;Sci-fi" .
+
+5 "achievements" 0 ;
+    "appid" 60 ;
+    "average_playtime" 175 ;
+    "categories" "Multi-player;Online Multi-Player;Valve Anti-Cheat enabled" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 10 ;
+    "name" "Ricochet" ;
+    "negative_ratings" 684 ;
+    "owners" "5000000-10000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 2758 ;
+    "price" 3.99e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "2000-11-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "Action;FPS;Multiplayer" .
+
+6 "achievements" 0 ;
+    "appid" 70 ;
+    "average_playtime" 1300 ;
+    "categories" "Single-player;Multi-player;Online Multi-Player;Steam Cloud;Valve Anti-Cheat enabled" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 83 ;
+    "name" "Half-Life" ;
+    "negative_ratings" 1100 ;
+    "owners" "5000000-10000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 27755 ;
+    "price" 7.19e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "1998-11-08" ;
+    "required_age" 0 ;
+    "steamspy_tags" "FPS;Classic;Action" .
+
+7 "achievements" 0 ;
+    "appid" 80 ;
+    "average_playtime" 427 ;
+    "categories" "Single-player;Multi-player;Valve Anti-Cheat enabled" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 43 ;
+    "name" "Counter-Strike: Condition Zero" ;
+    "negative_ratings" 1439 ;
+    "owners" "10000000-20000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 12120 ;
+    "price" 7.19e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "2004-03-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "Action;FPS;Multiplayer" .
+
+8 "achievements" 0 ;
+    "appid" 130 ;
+    "average_playtime" 361 ;
+    "categories" "Single-player" ;
+    "developer" "Gearbox Software" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 205 ;
+    "name" "Half-Life: Blue Shift" ;
+    "negative_ratings" 420 ;
+    "owners" "5000000-10000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 3822 ;
+    "price" 3.99e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "2001-06-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "FPS;Action;Sci-fi" .
+
+9 "achievements" 33 ;
+    "appid" 220 ;
+    "average_playtime" 691 ;
+    "categories" "Single-player;Steam Achievements;Steam Trading Cards;Captions available;Partial Controller Support;Steam Cloud;Includes Source SDK" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 402 ;
+    "name" "Half-Life 2" ;
+    "negative_ratings" 2419 ;
+    "owners" "10000000-20000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 67902 ;
+    "price" 7.19e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "2004-11-16" ;
+    "required_age" 0 ;
+    "steamspy_tags" "FPS;Action;Sci-fi" .
+
+1 "achievements" 0 ;
+    "appid" 20 ;
+    "average_playtime" 277 ;
+    "categories" "Multi-player;Online Multi-Player;Local Multi-Player;Valve Anti-Cheat enabled" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 62 ;
+    "name" "Team Fortress Classic" ;
+    "negative_ratings" 633 ;
+    "owners" "5000000-10000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 3318 ;
+    "price" 3.99e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "1999-04-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "Action;FPS;Multiplayer" .
+
+0 "achievements" 0 ;
+    "appid" 10 ;
+    "average_playtime" 17612 ;
+    "categories" "Multi-player;Online Multi-Player;Local Multi-Player;Valve Anti-Cheat enabled" ;
+    "developer" "Valve" ;
+    "english" 1 ;
+    "genres" "Action" ;
+    "median_playtime" 317 ;
+    "name" "Counter-Strike" ;
+    "negative_ratings" 3339 ;
+    "owners" "10000000-20000000" ;
+    "platforms" "windows;mac;linux" ;
+    "positive_ratings" 124534 ;
+    "price" 7.19e+00 ;
+    "publisher" "Valve" ;
+    "release_date" "2000-11-01" ;
+    "required_age" 0 ;
+    "steamspy_tags" "Action;FPS;Multiplayer" .
+

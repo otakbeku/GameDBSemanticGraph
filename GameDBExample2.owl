@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3"
+         xmlns="http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/glaci/ontologies/2021/3/untitled-ontology-3"/>
+
+<owl:ObjectProperty rdf:about="#hasDifficulty">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Game"/>
+  <rdfs:range rdf:resource="#DifficultyValuePartition"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasGenre"/>
+
+<owl:ObjectProperty rdf:about="#hasPlatform">
+  <rdfs:domain rdf:resource="#Game"/>
+  <rdfs:range rdf:resource="#Platform"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Game">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DifficultyValuePartition">
+  <rdfs:subClassOf rdf:resource="#ValuePartition"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Easy"/>
+        <rdf:Description rdf:about="#Hard"/>
+        <rdf:Description rdf:about="#Normal"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Platform"/>
+
+<owl:Class rdf:about="#Chess">
+  <rdfs:subClassOf rdf:resource="#NamedGame"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDifficulty"/>
+      <owl:someValuesFrom rdf:resource="#Normal"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasGenre"/>
+      <owl:someValuesFrom rdf:resource="#MultiPlayer"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasGenre"/>
+      <owl:someValuesFrom rdf:resource="#SinglePlayer"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasPlatform"/>
+      <owl:someValuesFrom rdf:resource="#LinuxPlatform"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasPlatform"/>
+      <owl:someValuesFrom rdf:resource="#MacOSXPlatform"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasPlatform"/>
+      <owl:someValuesFrom rdf:resource="#WindowsPlatform"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#NamedGame">
+  <rdfs:subClassOf rdf:resource="#Game"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Normal">
+  <rdfs:subClassOf rdf:resource="#DifficultyValuePartition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MultiPlayer">
+  <rdfs:subClassOf rdf:resource="#Genre"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SinglePlayer">
+  <rdfs:subClassOf rdf:resource="#Genre"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LinuxPlatform">
+  <rdfs:subClassOf rdf:resource="#Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MacOSXPlatform">
+  <rdfs:subClassOf rdf:resource="#Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WindowsPlatform">
+  <rdfs:subClassOf rdf:resource="#Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Easy">
+  <rdfs:subClassOf rdf:resource="#DifficultyValuePartition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard">
+  <rdfs:subClassOf rdf:resource="#DifficultyValuePartition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ValuePartition"/>
+
+<owl:Class rdf:about="#EasyGame">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Game"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasGenre"/>
+          <owl:someValuesFrom rdf:resource="#Easy"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Genre"/>
+
+<owl:Class rdf:about="#HardGame">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Game"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasGenre"/>
+          <owl:someValuesFrom rdf:resource="#Hard"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#LeagueOfLegends">
+  <rdfs:subClassOf rdf:resource="#NamedGame"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LinuxGame">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Game"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasPlatform"/>
+          <owl:someValuesFrom rdf:resource="#LinuxPlatform"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#MacOSXGame">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Game"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasPlatform"/>
+          <owl:someValuesFrom rdf:resource="#MacOSXPlatform"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#MultiPlayerGame">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Game"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasGenre"/>
+          <owl:someValuesFrom rdf:resource="#MultiPlayer"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#NormalGame">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Game"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasGenre"/>
+          <owl:someValuesFrom rdf:resource="#Normal"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Online">
+  <rdfs:subClassOf rdf:resource="#Genre"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Puzzle">
+  <rdfs:subClassOf rdf:resource="#Genre"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RolePlayGame">
+  <rdfs:subClassOf rdf:resource="#Genre"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SinglePlayerGame">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Game"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasGenre"/>
+          <owl:someValuesFrom rdf:resource="#SinglePlayer"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Sudoku">
+  <rdfs:subClassOf rdf:resource="#NamedGame"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WorldOfWarcraft">
+  <rdfs:subClassOf rdf:resource="#NamedGame"/>
+</owl:Class>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#MultiPlayer"/>
+    <rdf:Description rdf:about="#Online"/>
+    <rdf:Description rdf:about="#Puzzle"/>
+    <rdf:Description rdf:about="#RolePlayGame"/>
+    <rdf:Description rdf:about="#SinglePlayer"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#LinuxPlatform"/>
+    <rdf:Description rdf:about="#MacOSXPlatform"/>
+    <rdf:Description rdf:about="#WindowsPlatform"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Game"/>
+    <rdf:Description rdf:about="#Genre"/>
+    <rdf:Description rdf:about="#Platform"/>
+    <rdf:Description rdf:about="#ValuePartition"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Easy"/>
+    <rdf:Description rdf:about="#Hard"/>
+    <rdf:Description rdf:about="#Normal"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Chess"/>
+    <rdf:Description rdf:about="#LeagueOfLegends"/>
+    <rdf:Description rdf:about="#Sudoku"/>
+    <rdf:Description rdf:about="#WorldOfWarcraft"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

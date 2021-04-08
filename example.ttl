@@ -1,0 +1,18 @@
+@prefix ns1: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/donna> a ns1:Person ;
+    ns1:mbox <mailto:donna@example.org> ;
+    ns1:name "Donna Fales" ;
+    ns1:nick "donna"@ed .
+
+<http://example.org/edward> a ns1:Person ;
+    ns1:mbox <mailto:e.scissorhands@example.org> ;
+    ns1:name "Edward Scissorhands" ;
+    ns1:nick "ed"^^xsd:string .
+
+<http://example.org/harits> a ns1:Person ;
+    ns1:mbox <mailto:harits@example.org> ;
+    ns1:name "['Harits Abdr', 'Ais']" ;
+    ns1:nick "H1"^^xsd:string .
+
